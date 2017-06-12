@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "563651024997",
+    "firebase_url": "https://ritmapp-73800.firebaseio.com",
+    "project_id": "ritmapp-73800",
+    "storage_bucket": "ritmapp-73800.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:563651024997:android:37ba58caa0bcb212",
+        "android_client_info": {
+          "package_name": "andrade.com.br.ritmapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "563651024997-75qrvjnm8r8hkohobb6926sogjdrtsb9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "andrade.com.br.ritmapp",
+            "certificate_hash": "ec0a5985f6780dcc9b9aaa689d686d8d5671b723"
+          }
+        },
+        {
+          "client_id": "563651024997-gtbj9tn5a0qgd2cvc6mcdfpk6fqnirul.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyByOsvXpASshBGSnPbrH6J4wz8hp4jlGfI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "563651024997-gtbj9tn5a0qgd2cvc6mcdfpk6fqnirul.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

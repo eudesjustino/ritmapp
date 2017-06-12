@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Ritmapp</string>
+    <string name="autor">Autor</string>
+    <string name="musica">Musica</string>
+    <string name="anexo">Anexo:</string>
+    <string name="velocidade">Velocidade:</string>
+    <string name="instrumento">Instrumento:</string>
+    <string name="genero">Gênero:</string>
+    <string name="texto">Letra/Comentário:</string>
+</resources>
