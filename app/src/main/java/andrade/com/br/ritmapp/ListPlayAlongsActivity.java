@@ -1,5 +1,6 @@
 package andrade.com.br.ritmapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -28,6 +29,7 @@ public class ListPlayAlongsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_play_alongs);
+
 
          recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
 
@@ -78,10 +80,21 @@ public class ListPlayAlongsActivity extends AppCompatActivity {
         mLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(mLayoutManager);
 
-        mAdapter = new PlayAdapter(this,plays);
+        mAdapter = new PlayAdapter(this,plays,mListener);
         recyclerView.setAdapter(mAdapter);
 
     }
+
+    private PlayAdapter.ClickItemPlay mListener=
+            new PlayAdapter.ClickItemPlay() {
+                @Override
+                public void itemClicado(PlayAlong playAlong) {
+
+                    Intent it = new Intent(ListPlayAlongsActivity.this, DetalheActivity.class);
+                    it.putExtra("playalong", playAlong);
+                    startActivity(it);
+                }
+            };
 
 
 

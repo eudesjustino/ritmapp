@@ -21,16 +21,32 @@ public class PlayAdapter extends RecyclerView.Adapter<PlayHolder>{
     ArrayList<PlayAlong> mPlayAlongs;
     Context mCtx;
     PlayAlong mPlayAlong;
+    ClickItemPlay mListener;
 
 
-    public PlayAdapter(Context context, ArrayList<PlayAlong> plays){
+    public PlayAdapter(Context context, ArrayList<PlayAlong> plays, ClickItemPlay listener ){
         mPlayAlongs = plays;
         mCtx = context;
+        mListener = listener;
     }
     @Override
     public PlayHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View layoutView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_list_play_along, parent,false);
-        return new PlayHolder(layoutView);
+
+        final PlayHolder ph = new PlayHolder(layoutView);
+        ph.itemView.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if (mListener != null) {
+                            int pos = ph.getAdapterPosition();
+                            PlayAlong playAlongItem = mPlayAlongs.get(pos);
+                            mListener.itemClicado(playAlongItem);
+                        }
+                    }
+                });
+
+        return ph;
     }
 
     @Override
@@ -50,5 +66,9 @@ public class PlayAdapter extends RecyclerView.Adapter<PlayHolder>{
     @Override
     public int getItemCount() {
         return mPlayAlongs.size();
+    }
+
+    public interface ClickItemPlay{
+        void itemClicado(PlayAlong playAlong);
     }
 }
